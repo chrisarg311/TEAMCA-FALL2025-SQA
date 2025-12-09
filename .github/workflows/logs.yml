@@ -21,7 +21,7 @@ jobs:
         shell: bash
         run: |
           TIMESTAMP=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
-          ID_PROVIDER=$("GitHub")
+          ID_PROVIDER="GitHub"
           
           for FILE in $(cat modified_files.txt); do
               echo "$ID_PROVIDER - $FILE - commit $GITHUB_SHA - $TIMESTAMP" >> modification_log.txt
