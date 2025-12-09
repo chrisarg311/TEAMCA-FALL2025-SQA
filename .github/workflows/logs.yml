@@ -27,7 +27,7 @@ jobs:
           done
 
       - name: Upload log artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: modification-log
           path: modification_log.txt
