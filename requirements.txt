@@ -1,6 +1,6 @@
 pandas
 numpy
-git=3.1.43
+git==3.1.43
 os
 datetime
 subprocess
