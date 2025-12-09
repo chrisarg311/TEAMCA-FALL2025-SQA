@@ -20,9 +20,18 @@ class TestGetPythonCount(unittest.TestCase):
     self.assertEqual(gitrepominer.getPythonCount("green"), 13)
 
   def test_getPythonCount3(self):
-    self.assertEqual(gitrepominer.getPythonCount(13, Path(__file__).resolve().parent))
+    self.assertEqual(gitrepominer.getPythonCount(13), Path(__file__).resolve().parent)
 
-#class TestGetMLStats:
+class TestGetMLStats(unittest.TestCase):
+
+  def test_getMLStats1(self):
+    self.assertEqual(gitrepominer.getMLStats(Path(__file__).resolve().parent), 1)
+
+  def test_getMLStats2(self):
+    self.assertEqual(gitrepominer.getMLStats("directory"), 1)
+
+  def test_getMLStats3(self):
+    self.assertEqual(gitrepominer.getMLStats("path"), "anotherPath")
 
 
 if __name__ == '__main__':
