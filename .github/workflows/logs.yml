@@ -1,0 +1,33 @@
+name: Log File Modifications
+
+on:
+  push:
+    paths:
+      - '**/*.py'
+
+jobs:
+  log-modifications:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Get modified files
+        run: |
+          git diff --name-only ${{ github.event.before }} ${{ github.sha }} > modified_files.txt
+          echo "Files modified in this push:"
+          cat modified_files.txt
+
+      - name: Append modification log
+        run: |
+          TIMESTAMP=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
+          ID_PROVIDER=$("GitHub")
+          
+          for FILE in $(cat modified_files.txt); do
+              echo "$ID_PROVIDER - $FILE - $TIMESTAMP" >> modification_log.txt
+          done
+
+      - name: Upload log artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: modification-log
+          path: modification_log.txt
