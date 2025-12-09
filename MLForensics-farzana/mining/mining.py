@@ -10,7 +10,7 @@ from git import Repo
 from git import exc 
 
 
-def giveTimeStamp(): #testing forensics logger [second time]
+def giveTimeStamp():
   tsObj = time.time()
   strToret = datetime.fromtimestamp(tsObj).strftime('%Y-%m-%d %H:%M:%S')
   return strToret
