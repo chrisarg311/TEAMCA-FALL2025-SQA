@@ -19,7 +19,7 @@ class TestGetPythonCount(unittest.TestCase):
   def test_getPythonCount2(self):
     self.assertEqual(gitrepominer.getPythonCount("green"), 13)
 
-  def test_getPythonCount1(self):
+  def test_getPythonCount3(self):
     self.assertEqual(gitrepominer.getPythonCount(13, Path(__file__).resolve().parent))
 
 #class TestGetMLStats:
