@@ -63,7 +63,7 @@ class TestDaysBetween(unittest.TestCase):
     self.assertEqual(mining.days_between("Tuesday", "Friday"), ERROR_FORMAT)
 
   def test_daysBetween2(self):
-    self.assertEqual(mining.days_between(datetime(1989, 6, 6), datetime(1989, 6, 10), 4)
+    self.assertEqual(mining.days_between(datetime(1989, 6, 6), datetime(1989, 6, 10), 4))
 
 
 if __name__ == '__main__':
