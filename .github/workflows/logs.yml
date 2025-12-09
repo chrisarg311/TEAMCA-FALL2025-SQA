@@ -24,7 +24,7 @@ jobs:
           ID_PROVIDER=$("GitHub")
           
           for FILE in $(cat modified_files.txt); do
-              echo "$ID_PROVIDER - $FILE - $TIMESTAMP" >> modification_log.txt
+              echo "$TIMESTAMP - $FILE - $GITHUB_ACTOR - commit $GITHUB_SHA" >> modification_log.txt
           done
 
       - name: Upload log artifact
