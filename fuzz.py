@@ -43,7 +43,7 @@ class TestGetMLStats(unittest.TestCase):
 class TestGiveTimeStamp(unittest.TestCase):
 
   def test_giveTimeStamp1(self):
-    self.assertEqual(mining.giveTimeStamp(), datetime.fromtimestamp(time.time()).strftime('%Y-%m-%d %H:%M:%S'))
+    self.assertEqual(mining.giveTimeStamp(), 1)
 
   def test_giveTimeStamp2(self):
     self.assertEqual(mining.giveTimeStamp(), "11:11:11")
@@ -64,7 +64,7 @@ class TestDaysBetween(unittest.TestCase):
     self.assertEqual(mining.days_between("Tuesday", "Friday"), ERROR_FORMAT)
 
   def test_daysBetween2(self):
-    self.assertEqual(mining.days_between(datetime(1989, 6, 6), datetime(1989, 6, 10), 4))
+    self.assertEqual(mining.days_between(datetime(1989, 6, 6), datetime(1989, 6, 10)), 4)
 
 
 if __name__ == '__main__':
