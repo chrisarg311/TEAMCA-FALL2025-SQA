@@ -15,3 +15,7 @@ class getPythonCountTests(unittest.TestCase):
 
   def getPythonCount1(self):
     self.assertEqual(getPythonCount(Path(__file__).resolve().parentprint(script_dir)), 1)
+
+
+if __name__ == '__main__':
+  unittest.main()
