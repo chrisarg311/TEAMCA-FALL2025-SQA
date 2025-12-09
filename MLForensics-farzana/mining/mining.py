@@ -10,13 +10,13 @@ from git import Repo
 from git import exc 
 
 
-def giveTimeStamp():
+def giveTimeStamp(): #test modification 1
   tsObj = time.time()
   strToret = datetime.fromtimestamp(tsObj).strftime('%Y-%m-%d %H:%M:%S')
   return strToret
   
 
-def deleteRepo(dirName, type_):
+def deleteRepo(dirName, type_): #test modification 2
     print(':::' + type_ + ':::Deleting ', dirName)
     try:
         if os.path.exists(dirName):
@@ -25,19 +25,19 @@ def deleteRepo(dirName, type_):
         print('Failed deleting, will try manually')  
         
         
-def dumpContentIntoFile(strP, fileP):
+def dumpContentIntoFile(strP, fileP): #test modification 3
     fileToWrite = open( fileP, 'w')
     fileToWrite.write(strP )
     fileToWrite.close()
     return str(os.stat(fileP).st_size)
   
   
-def makeChunks(the_list, size_):
+def makeChunks(the_list, size_): #test modification 4
     for i in range(0, len(the_list), size_):
         yield the_list[i:i+size_]
         
         
-def cloneRepo(repo_name, target_dir):
+def cloneRepo(repo_name, target_dir): #test modification 5
     cmd_ = "git clone " + repo_name + " " + target_dir 
     try:
        subprocess.check_output(['bash','-c', cmd_])    
