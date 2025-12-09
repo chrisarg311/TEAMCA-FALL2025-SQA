@@ -49,13 +49,13 @@ class TestGiveTimeStamp(unittest.TestCase):
     self.assertEqual(mining.giveTimeStamp(), "11:11:11")
 
 
-#class TestMakeChunks(unittest.TestCase):
+class TestMakeChunks(unittest.TestCase):
 
-  #def test_(self):
-    #self.assertEqual()
+  def test_makeChunks(self):
+    self.assertEqual(mining.makeChunks([1, 2, 3, 4], 2), 1)
 
-  #def test_(self):
-    #self.assertEqual()
+  def test_(self):
+    self.assertEqual(mining.makeChunks([], 5), [])
 
 
 class TestDaysBetween(unittest.TestCase):
