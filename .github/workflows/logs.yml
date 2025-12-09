@@ -2,8 +2,6 @@ name: Log File Modifications
 
 on:
   push:
-    paths:
-      - '**/*.py'
 
 jobs:
   log-modifications:
