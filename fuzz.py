@@ -11,9 +11,9 @@ spec.loader.exec_module(gitrepominer)
 #from MLForensics_farzana/mining/mining.py import giveTimeStamp, makeChunks, days_between
 
 
-class test_getPythonCount(unittest.TestCase):
+class TestGetPythonCount(unittest.TestCase):
 
-  def getPythonCount1(self):
+  def test_getPythonCount1(self):
     self.assertEqual(gitrepominer.getPythonCount(Path(__file__).resolve().parent), 1)
 
 
